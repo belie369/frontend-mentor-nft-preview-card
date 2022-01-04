@@ -1,0 +1,205 @@
+@import './colors';
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'Outfit', sans-serif;
+	font-size: 1.8rem;
+	background-color: $main-bg;
+	color: $white;
+}
+
+a {
+	color: $white;
+	text-decoration: none;
+	font-weight: normal;
+	transition: color 0.3s ease-in;
+
+	&:hover {
+		color: $primary2;
+	}
+}
+
+.wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.box {
+	padding: 1.3em;
+	background-color: $card-bg;
+	min-width: 330px;
+	max-width: 330px;
+	max-height: 543px;
+	border-radius: 12px;
+	box-shadow: 0 0 1px #000;
+
+	&__img {
+		position: relative;
+		margin-bottom: 1.2em;
+		background-image: url(../images/image-equilibrium.jpg);
+		background-position: center;
+		background-size: cover;
+		min-width: 279px;
+		min-height: 279px;
+		border-radius: 10px;
+		overflow: hidden;
+		transition: background-color 1s;
+
+		&:hover {
+			cursor: pointer;
+		}
+
+		&::after,
+		&::before {
+			content: '';
+			position: absolute;
+		}
+
+		&::after {
+			top: 50%;
+			left: 50%;
+			background-image: url(../images/icon-view.svg);
+			background-position: center;
+			background-size: cover;
+			width: 20%;
+			height: 20%;
+			transform: translate(-50%, -50%);
+			opacity: 0;
+			transition: opacity 0.3s;
+		}
+
+		&:hover::after {
+			opacity: 1;
+		}
+
+		&::before {
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 0.5;
+			transition: background-color 1s;
+		}
+
+		&:hover::before {
+			background-color: $primary2;
+		}
+	}
+
+	&__title {
+		margin: 1.2em 0 0.8em;
+		font-size: 2.2rem;
+		font-weight: 600;
+	}
+
+	&__text {
+		padding-bottom: 1em;
+		max-width: 95%;
+		color: $primary1;
+		font-weight: 300;
+		font-size: 1.6rem;
+		line-height: 1.5;
+	}
+
+	&__info {
+		display: flex;
+		justify-content: space-between;
+		padding-bottom: 0.9em;
+
+		&-value,
+		&-date {
+			position: relative;
+		}
+
+		&-value {
+			padding-left: 1.1em;
+			color: $primary2;
+			font-size: 1.5rem;
+
+			&::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				background-image: url('../images/icon-ethereum.svg');
+				background-repeat: no-repeat;
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+		&-date {
+			color: $primary1;
+			font-size: 1.6rem;
+			font-weight: 300;
+
+			&::before {
+				content: '';
+				position: absolute;
+				top: 2px;
+				left: -22px;
+				background-image: url('../images/icon-clock.svg');
+				background-repeat: no-repeat;
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+
+	&__line {
+		margin-bottom: 0.9em;
+		background-color: $line;
+		width: 100%;
+		height: 1px;
+	}
+
+	&__author {
+		display: flex;
+		align-items: center;
+		padding-bottom: 1.5em;
+		font-size: 1.4rem;
+
+		&-img {
+			background-image: url('../images/image-avatar.png');
+			background-size: cover;
+			width: 30px;
+			height: 30px;
+			border: 1.5px solid $white;
+			border-radius: 50%;
+		}
+
+		&-creds {
+			margin-left: 1em;
+			color: $primary1;
+			font-weight: 400;
+		}
+	}
+}
+
+.footer {
+	position: fixed;
+	bottom: 0;
+	padding: 1.2em 1em;
+	background-color: $main-bg;
+	height: 25px;
+
+	&__attribution {
+		color: $primary1;
+		font-size: 1.1rem;
+		font-weight: normal;
+	}
+}
