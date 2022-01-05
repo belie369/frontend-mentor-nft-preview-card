@@ -25,9 +25,11 @@ Users should be able to:
 ### Screenshots
 
 - Mobile Solution (375px width):
+
   ![](./screenshot_mobile.png)
 
 - Desktop Solution (1920px width):
+
   ![](./screenshot_desktop.png)
 
 ### Links
